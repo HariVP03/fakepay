@@ -67,7 +67,7 @@ const Home: React.FC = () => {
                   harivp@fakepay
                 </h6>
                 <h6 style={{ color: "blue", fontWeight: "400" }}>
-                  My Account ➞
+                  My Account ➜
                 </h6>
               </div>
               <img
