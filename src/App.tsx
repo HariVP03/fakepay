@@ -28,7 +28,7 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/variables.css";
 import Home from "./pages/home/Home";
-import "./components/Menu.css";
+import "./App.css";
 
 setupIonicReact();
 
