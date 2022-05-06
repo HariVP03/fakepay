@@ -1,15 +1,22 @@
 import {
-  IonButtons,
+  IonButton,
   IonContent,
   IonHeader,
-  IonMenuButton,
-  IonModal,
+  IonIcon,
   IonPage,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
 import { useParams } from "react-router";
-import ExploreContainer from "../../components/ExploreContainer";
+import {
+  qrCodeOutline,
+  arrowUpCircle,
+  newspaperOutline,
+  settingsOutline,
+  arrowBackCircleOutline,
+  arrowUpOutline,
+} from "ionicons/icons";
+import "./Home.css";
 // import "./Page.css";
 
 const Home: React.FC = () => {
@@ -94,11 +101,51 @@ const Home: React.FC = () => {
               backgroundColor: "white",
               borderTopLeftRadius: "20px",
               borderTopRightRadius: "20px",
+              display: "flex",
+              justifyContent: "space-around",
+              paddingLeft: "20px",
+              paddingRight: "20px",
+              paddingTop: "40px",
             }}
-          ></div>
+          >
+            <HomeButtons icon={qrCodeOutline} />
+            <HomeButtons icon={arrowUpOutline} />
+            <HomeButtons icon={newspaperOutline} />
+            <HomeButtons icon={settingsOutline} />
+          </div>
         </div>
       </IonContent>
     </IonPage>
+  );
+};
+
+const HomeButtons: React.FC<{ icon: any }> = ({ icon }) => {
+  return (
+    <>
+      <div
+        style={{
+          backgroundColor: "#4184f3",
+          borderRadius: "100%",
+          width: "45px",
+          height: "45px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <IonIcon
+          style={{
+            width: "25px",
+            height: "25px",
+            color: "white",
+            padding: "0px",
+            fontSize: "10px",
+          }}
+          // icon={qrCodeOutline}
+          icon={icon}
+        />
+      </div>
+    </>
   );
 };
 
