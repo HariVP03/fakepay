@@ -101,17 +101,22 @@ const Home: React.FC = () => {
               backgroundColor: "white",
               borderTopLeftRadius: "20px",
               borderTopRightRadius: "20px",
-              display: "flex",
-              justifyContent: "space-around",
-              paddingLeft: "20px",
-              paddingRight: "20px",
-              paddingTop: "40px",
             }}
           >
-            <HomeButtons icon={qrCodeOutline} />
-            <HomeButtons icon={arrowUpOutline} />
-            <HomeButtons icon={newspaperOutline} />
-            <HomeButtons icon={settingsOutline} />
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-around",
+                paddingLeft: "5px",
+                paddingRight: "5px",
+                paddingTop: "40px",
+              }}
+            >
+              <HomeButtons icon={qrCodeOutline} text="Scan" />
+              <HomeButtons icon={arrowUpOutline} text="Send" />
+              <HomeButtons icon={newspaperOutline} text="Bills" />
+              <HomeButtons icon={settingsOutline} text="More" />
+            </div>
           </div>
         </div>
       </IonContent>
@@ -119,9 +124,17 @@ const Home: React.FC = () => {
   );
 };
 
-const HomeButtons: React.FC<{ icon: any }> = ({ icon }) => {
+const HomeButtons: React.FC<{ icon: any; text: string }> = ({ icon, text }) => {
   return (
-    <>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        color: "#4184f3",
+        fontSize: "14px",
+      }}
+    >
       <div
         style={{
           backgroundColor: "#4184f3",
@@ -131,21 +144,22 @@ const HomeButtons: React.FC<{ icon: any }> = ({ icon }) => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          flexDirection: "column",
         }}
       >
         <IonIcon
           style={{
-            width: "25px",
-            height: "25px",
+            width: "20px",
+            height: "20px",
             color: "white",
             padding: "0px",
             fontSize: "10px",
           }}
-          // icon={qrCodeOutline}
           icon={icon}
         />
       </div>
-    </>
+      {text}
+    </div>
   );
 };
 
