@@ -15,6 +15,7 @@ import {
   settingsOutline,
   arrowBackCircleOutline,
   arrowUpOutline,
+  chevronDownOutline,
 } from "ionicons/icons";
 import "./Home.css";
 // import "./Page.css";
@@ -117,6 +118,55 @@ const Home: React.FC = () => {
               <HomeButtons icon={newspaperOutline} text="Bills" />
               <HomeButtons icon={settingsOutline} text="More" />
             </div>
+            <div style={{ paddingLeft: "28px", marginTop: "50px" }}>
+              People
+              <div
+                style={{
+                  display: "flex",
+                  gap: "10px",
+                  flexWrap: "wrap",
+                  objectPosition: "center",
+                  justifyContent: "space-between",
+                  // Left: "-10px",
+                  paddingRight: "20px",
+                }}
+              >
+                <PeopleAvatar
+                  name="Adebayo"
+                  url="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                />
+                <PeopleAvatar
+                  name="Penny"
+                  url="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHBlb3BsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"
+                />
+                <PeopleAvatar
+                  name="Michael"
+                  url="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDB8fHBlb3BsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"
+                />
+                <PeopleAvatar
+                  name="John"
+                  url="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+                />
+                <HomeButtons
+                  icon={chevronDownOutline}
+                  styles={{ marginTop: "10px" }}
+                  text="More"
+                />
+                {/* <IonIcon
+                  style={{
+                    width: "45px",
+                    height: "45px",
+                    padding: "0px",
+                    fontSize: "10px",
+                    backgroundColor: "#dae6f5",
+                    marginTop: "10px",
+                    borderRadius: "100%",
+                    color: "#4184f4",
+                  }}
+                  icon={chevronDownOutline}
+                /> */}
+              </div>
+            </div>
           </div>
         </div>
       </IonContent>
@@ -124,7 +174,11 @@ const Home: React.FC = () => {
   );
 };
 
-const HomeButtons: React.FC<{ icon: any; text: string }> = ({ icon, text }) => {
+const HomeButtons: React.FC<{ icon: any; text?: string; styles?: any }> = ({
+  icon,
+  text,
+  styles,
+}) => {
   return (
     <div
       style={{
@@ -133,6 +187,7 @@ const HomeButtons: React.FC<{ icon: any; text: string }> = ({ icon, text }) => {
         alignItems: "center",
         color: "#4184f3",
         fontSize: "14px",
+        ...styles,
       }}
     >
       <div
@@ -159,6 +214,35 @@ const HomeButtons: React.FC<{ icon: any; text: string }> = ({ icon, text }) => {
         />
       </div>
       {text}
+    </div>
+  );
+};
+
+const PeopleAvatar: React.FC<{ url: string; name: string }> = ({
+  url,
+  name,
+}) => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        fontSize: "12px",
+      }}
+    >
+      <img
+        src={url}
+        style={{
+          width: "45px",
+          height: "45px",
+          borderRadius: "100%",
+          objectFit: "cover",
+          marginTop: "10px",
+        }}
+        alt="avatar"
+      />
+      {name}
     </div>
   );
 };
