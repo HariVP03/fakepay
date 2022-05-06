@@ -1,5 +1,5 @@
 {
-	"appId": "io.ionic.starter",
+	"appId": "io.ionic.fakepay",
 	"appName": "FakePay",
 	"webDir": "build",
 	"bundledWebRuntime": false
