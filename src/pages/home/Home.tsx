@@ -18,9 +18,10 @@ import {
   chevronDownOutline,
 } from "ionicons/icons";
 import "./Home.css";
+import { Link } from "react-router-dom";
 // import "./Page.css";
 
-const Home: React.FC = () => {
+const Home: React.FC<{ history?: any }> = ({ history }) => {
   const { name } = useParams<{ name: string }>();
 
   return (
@@ -121,7 +122,11 @@ const Home: React.FC = () => {
                 // flexirection: "column",
               }}
             >
-              <HomeButtons icon={qrCodeOutline} text="Scan" />
+              <HomeButtons
+                icon={qrCodeOutline}
+                text="Receive"
+                to="/receive/hari@fakepay"
+              />
               <HomeButtons icon={arrowUpOutline} text="Send" />
               <HomeButtons icon={newspaperOutline} text="Bills" />
               <HomeButtons icon={settingsOutline} text="More" />
@@ -189,47 +194,51 @@ const Home: React.FC = () => {
   );
 };
 
-const HomeButtons: React.FC<{ icon: any; text?: string; styles?: any }> = ({
-  icon,
-  text,
-  styles,
-}) => {
+const HomeButtons: React.FC<{
+  icon: any;
+  text?: string;
+  styles?: any;
+  to?: any;
+}> = ({ icon, text, styles, to }) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        color: "#4184f3",
-        fontSize: "14px",
-        ...styles,
-      }}
-    >
+    <Link to={to} style={{ textDecoration: "none" }}>
       <div
         style={{
-          backgroundColor: "#4184f3",
-          borderRadius: "100%",
-          width: "45px",
-          height: "45px",
           display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
           flexDirection: "column",
+          alignItems: "center",
+          color: "#4184f3",
+          fontSize: "14px",
+          ...styles,
         }}
+        // onClick={onClick}
       >
-        <IonIcon
+        <div
           style={{
-            width: "20px",
-            height: "20px",
-            color: "white",
-            padding: "0px",
-            fontSize: "10px",
+            backgroundColor: "#4184f3",
+            borderRadius: "100%",
+            width: "50px",
+            height: "50px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
           }}
-          icon={icon}
-        />
+        >
+          <IonIcon
+            style={{
+              width: "25px",
+              height: "25px",
+              color: "white",
+              padding: "0px",
+              fontSize: "10px",
+            }}
+            icon={icon}
+          />
+        </div>
+        {text}
       </div>
-      {text}
-    </div>
+    </Link>
   );
 };
 
@@ -249,8 +258,8 @@ const PeopleAvatar: React.FC<{ url: string; name: string }> = ({
       <img
         src={url}
         style={{
-          width: "45px",
-          height: "45px",
+          width: "50px",
+          height: "50px",
           borderRadius: "100%",
           objectFit: "cover",
           marginTop: "10px",

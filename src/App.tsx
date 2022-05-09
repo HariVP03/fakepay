@@ -29,6 +29,7 @@ import "@ionic/react/css/display.css";
 import "./theme/variables.css";
 import Home from "./pages/home/Home";
 import "./App.css";
+import Receive from "./pages/receive/Receive";
 
 setupIonicReact();
 
@@ -41,6 +42,9 @@ const App: React.FC = () => {
           <IonRouterOutlet id="main">
             <Route path="/" exact={true}>
               <Home />
+            </Route>
+            <Route path="/receive/:upiId" exact={true}>
+              <Receive />
             </Route>
             <Route path="/page/:name" exact={true}>
               <Page />

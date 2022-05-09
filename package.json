@@ -46,7 +46,8 @@
     "build": "ionic capacitor copy android",
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
     "eject": "react-scripts eject",
-    "dev": "ionic serve"
+    "dev": "ionic serve",
+    "dev:a": "ionic capacitor run android -l --host="
   },
   "eslintConfig": {
     "extends": [
