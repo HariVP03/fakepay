@@ -1,3 +1,18 @@
-.ion-icon {
-  font-size: small;
+.animate {
+  /* animation: animation 2s forward; */
+  animation-name: animation;
+  animation-duration: 300ms;
+  animation-direction: normal;
+  /* top: 80%; */
+}
+
+@keyframes animation {
+  0% {
+    top: 80%;
+    /* background-color: red; */
+  }
+  100% {
+    top: 30%;
+    /* background-color: yellow; */
+  }
 }

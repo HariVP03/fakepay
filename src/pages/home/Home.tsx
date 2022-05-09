@@ -32,14 +32,16 @@ const Home: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         {/* <ExploreContainer name={name} /> */}
-        <div style={{ backgroundColor: "#ebf4ff" }}>
+
+        <div style={{ backgroundColor: "#ebf4ff", height: "100vh" }}>
           <div
             style={{
               width: "100%",
-              height: "30vh",
+              height: "auto",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              minHeight: "30vh",
             }}
           >
             <div
@@ -96,13 +98,17 @@ const Home: React.FC = () => {
             </div>
           </div>
           <div
+            className="animate"
             style={{
               width: "100%",
               height: "70vh",
               backgroundColor: "white",
               borderTopLeftRadius: "20px",
               borderTopRightRadius: "20px",
+              // top: "80%",
+              position: "fixed",
             }}
+            // id="animate"
           >
             <div
               style={{
@@ -111,6 +117,8 @@ const Home: React.FC = () => {
                 paddingLeft: "5px",
                 paddingRight: "5px",
                 paddingTop: "40px",
+                // backgroundColor: "#dae6f5",
+                // flexirection: "column",
               }}
             >
               <HomeButtons icon={qrCodeOutline} text="Scan" />
@@ -118,7 +126,13 @@ const Home: React.FC = () => {
               <HomeButtons icon={newspaperOutline} text="Bills" />
               <HomeButtons icon={settingsOutline} text="More" />
             </div>
-            <div style={{ paddingLeft: "28px", marginTop: "50px" }}>
+            <div
+              style={{
+                paddingLeft: "28px",
+                marginTop: "50px",
+                // backgroundColor: "yellow",
+              }}
+            >
               People
               <div
                 style={{
@@ -133,19 +147,19 @@ const Home: React.FC = () => {
               >
                 <PeopleAvatar
                   name="Adebayo"
-                  url="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                  url="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 />
                 <PeopleAvatar
-                  name="Penny"
-                  url="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHBlb3BsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"
+                  name="Terin"
+                  url="https://avatars.githubusercontent.com/u/273509?v=4"
                 />
                 <PeopleAvatar
-                  name="Michael"
-                  url="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDB8fHBlb3BsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"
+                  name="Michelle"
+                  url="https://indianacademy.edu.in/wp-content/uploads/2020/04/profile-2.jpg"
                 />
                 <PeopleAvatar
                   name="John"
-                  url="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+                  url="https://pbs.twimg.com/profile_images/1349456113046056961/j0BvBsaT_400x400.jpg"
                 />
                 <HomeButtons
                   icon={chevronDownOutline}
@@ -167,6 +181,7 @@ const Home: React.FC = () => {
                 /> */}
               </div>
             </div>
+            {/* </div> */}
           </div>
         </div>
       </IonContent>
